@@ -1,0 +1,15 @@
+@(products: List[Product])(implicit lang: Lang)
+<!-- This is a product list view template.  
+     A scala template starts with params like above-->
+@import play.api.Play.current
+@import play.api.i18n.Messages.Implicits._
+
+@main(Messages("application.name")) {
+	
+	<dl class="products">
+		@for(product <- products) {
+      <dt>@product.name</dt>
+      <dd>@product.description</dd>
+    }
+    </dl>
+}
