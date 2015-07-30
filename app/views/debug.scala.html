@@ -1,6 +1,6 @@
 @()(implicit lang: Lang)
 @import play.api.Play.current
-@import play.api.i18n.Messages.Implicits._
+
 <footer>
   lang = @lang.code,
   user = @current.configuration.getString("environment.user"),
