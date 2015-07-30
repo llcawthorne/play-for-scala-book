@@ -1,4 +1,10 @@
-This is your new Play application
-=================================
+This is just Lewis playing with Play
+====================================
 
 This file will be packaged with your application, when using `activator dist`.
+ 
+I'm using "Play for Scala" book exercises as a starting point.  Currently 
+running on Play 2.4.2, but it has some warts in themes and some if-fy 
+handling of internationalization since the book was handling I18n an old way.
+
+To see it running just clone the repo; `activator run`; http://localhost:9000
