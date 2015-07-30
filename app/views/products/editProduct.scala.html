@@ -1,0 +1,28 @@
+@(productForm: Form[Product])(implicit flash: Flash, lang: Lang)
+<!-- the first parameter of this template is Form[Product], the type of 
+     the form we defined in our controller -->
+@import play.api.Play.current
+@import play.api.i18n.Messages.Implicits._
+@import helper._    // Form helpers
+<!--import helper.twitterBootstrap._   // this helper is deprecated, but easy to make on -->
+<!-- TODO: twitter has some examples with Bootstrap 3 working, so dig in to that later -->
+<!-- the twitter bootstrap import makes sure we have proper classes for the purty -->
+
+@main(Messages("products.form")) {
+  <h2>@Messages("products.form")</h2>
+
+  <!-- helper.form renders the form with correct action and method -->
+  @helper.form(action = routes.Products.save()) {
+    <fieldset>
+      <legend>
+        @Messages("products.details", Messages("products.new"))
+      </legend>
+      <!-- helper methods render both the form input element and label -->
+      @helper.inputText(productForm("ean"))
+      @helper.inputText(productForm("name"))
+      @helper.textarea(productForm("description"))
+    </fieldset>
+    <p><input type="submit" class="btn primary"
+        value='@Messages("products.new.submit")'></p>
+  }
+}

@@ -1,0 +1,3 @@
+@(ean: Long)
+<!-- the book authors like putting little snippets like this in a tags package, so the functions can be called like tags.barcode(product.ean) to "insert the tag" (add the element to a webpage).  not a horrible convention -->
+<img class="barcode" alt="@ean" src="@routes.Barcodes.barcode(ean)">
